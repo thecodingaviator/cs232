@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Sep 19 22:22:54 2023
+Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Revision Name : prime
+Top-level Entity Name : prime
+Family : Cyclone III
+Total logic elements : 1
+    Total combinational functions : 1
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 5
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

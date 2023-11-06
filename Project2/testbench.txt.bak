@@ -1,0 +1,9 @@
+# This is the testbench mapping for the 4 inputs a[3..0] and outputs result [3..0]
+a,3,switch,3
+a,2,switch,2
+a,1,switch,1
+a,0,switch,0
+Aout,3,HEX,0,2
+Aout,2,HEX,0,3
+Aout,1,HEX,0,4
+Aout,0,HEX,0,6

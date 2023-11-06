@@ -1,0 +1,9 @@
+# This is the testbench mapping for the 4 inputs a[3..0] and outputs result [3..0]
+buttonOne,0,button,0
+buttonTwo,0,button,1
+buttonThree,0,button,2
+reset,0,switch,0
+greenLED,3,LEDG,9
+greenLED,2,LEDG,2
+greenLED,1,LEDG,1
+greenLED,0,LEDG,0

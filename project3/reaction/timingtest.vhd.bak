@@ -1,0 +1,64 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity timingtest is
+end timingtest;
+
+architecture test of timingtest is
+
+    signal Reset, Start, React: std_logic;
+    signal Cycles: std_logic_vector (7 downto 0);
+    signal Leds: std_logic_vector (2 downto 0);
+
+    -- Signals for hexdisplay
+    signal HexIn: UNSIGNED (3 downto 0);
+    signal Segments: UNSIGNED (6 downto 0);
+
+    component timer
+        port(
+            clk     : in  std_logic;
+            reset   : in  std_logic;
+            start   : in  std_logic;
+            react   : in  std_logic;
+            mstime  : out std_logic_vector(7 downto 0);
+            leds    : out std_logic_vector(2 downto 0)
+        );
+    end component;
+
+    component hexdisplay
+        port 
+        (
+            a        : in UNSIGNED (3 downto 0);
+            segments : out UNSIGNED (6 downto 0)
+        );
+    end component;
+
+    constant num_cycles : integer := 20;
+    signal clk : std_logic := '1';
+
+begin
+
+    Reset <= '0', '1' after 7 ns;
+    Start <= '1', '0' after 20 ns, '1' after 35 ns, '0' after 105 ns, '1' after 125 ns,
+        '0' after 155 ns, '1' after 165 ns;
+    React <= '1', '0' after 45 ns, '1' after 65 ns, '0' after 135 ns, '1' after 145 ns;
+
+    process begin
+        for i in 1 to num_cycles loop
+            clk <= not clk;
+            wait for 5 ns;
+            clk <= not clk;
+            wait for 5 ns;
+        end loop;
+        wait;
+    end process;
+
+    T0: timer port map (clk, Reset, Start, React, Cycles, Leds);
+
+    -- Connect least significant 4 bits of Cycles to hexdisplay's input
+    HexIn <= UNSIGNED(Cycles(3 downto 0));
+    
+    -- Instantiate hexdisplay
+    H0: hexdisplay port map (HexIn, Segments);
+end test;

@@ -1,0 +1,8 @@
+lightsig,0,LEDG,0
+lightsig,1,LEDG,1
+lightsig,2,LEDG,2
+lightsig,3,LEDG,3
+lightsig,4,LEDG,4
+lightsig,5,LEDG,5
+lightsig,6,LEDG,6
+lightsig,7,LEDG,7

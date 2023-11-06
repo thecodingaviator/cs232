@@ -1,0 +1,10 @@
+v 4
+file . "traffic.vhd" "fc45676b402b7bbf7546b81dd464fdd4d0e1c85e" "20230925004245.629":
+  entity traffic at 19( 930) + 0 on 59;
+  architecture bdf_type of traffic at 39( 1268) + 0 on 60;
+file . "counter.vhd" "f9f842838223ce178808d06110488f8662117a57" "20230925004245.626":
+  entity counter at 5( 74) + 0 on 57;
+  architecture rtl of counter at 21( 341) + 0 on 58;
+file . "trafficbench.vhd" "7458a74757a1852726dffb71d0ad1a7f020a7e8e" "20230925004245.624":
+  entity trafficbench at 8( 142) + 0 on 55;
+  architecture test of trafficbench at 15( 248) + 0 on 56;

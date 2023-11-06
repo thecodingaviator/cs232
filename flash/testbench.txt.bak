@@ -1,0 +1,6 @@
+# This is the testbench mapping for the 4 inputs D, B, C, A and output O
+A,0,switch,3
+B,0,switch,2
+C,0,switch,1
+D,0,switch,0
+O,0,LEDG,0

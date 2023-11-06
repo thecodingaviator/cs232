@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Sep 24 20:39:35 2023
+Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Revision Name : traffic
+Top-level Entity Name : traffic
+Family : Cyclone III
+Total logic elements : 11
+    Total combinational functions : 11
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 9
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

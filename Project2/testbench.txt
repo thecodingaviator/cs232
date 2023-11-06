@@ -1,0 +1,22 @@
+-- Testbench mapping for timingtest
+
+Cycles,7,switch,7
+Cycles,6,switch,6
+Cycles,5,switch,5
+Cycles,4,switch,4
+Cycles,3,switch,3
+Cycles,2,switch,2
+Cycles,1,switch,1
+Cycles,0,switch,0
+
+Leds,2,LED,2
+Leds,1,LED,1
+Leds,0,LED,0
+
+Segments,0,HEX,1,0
+Segments,1,HEX,1,1
+Segments,2,HEX,1,2
+Segments,3,HEX,1,3
+Segments,4,HEX,1,4
+Segments,5,HEX,1,5
+Segments,6,HEX,1,6

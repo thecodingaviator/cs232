@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Sep 24 20:39:46 2023
+Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Revision Name : traffic
+Top-level Entity Name : traffic
+Family : Cyclone III
+Device : EP3C16F484C6
+Timing Models : Final
+Total logic elements : 11 / 15,408 ( < 1 % )
+    Total combinational functions : 11 / 15,408 ( < 1 % )
+    Dedicated logic registers : 4 / 15,408 ( < 1 % )
+Total registers : 4
+Total pins : 9 / 347 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 0 / 516,096 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

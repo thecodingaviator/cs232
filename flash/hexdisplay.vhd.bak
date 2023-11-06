@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity hexdisplay is
+    port 
+    (
+        a	    : in UNSIGNED (3 downto 0);
+        segments : out UNSIGNED (6 downto 0)
+    );
+end entity;
+
+architecture rtl of hexdisplay is
+begin
+    process(a)
+    begin
+        case a is
+				-- Extension: Exploring case/switch-case in VHDL
+            when "0000" => segments <= "0011111"; -- 0
+            when "0001" => segments <= "0000011"; -- 1
+            when "0010" => segments <= "0101101"; -- 2
+            when "0011" => segments <= "0100111"; -- 3
+            when "0100" => segments <= "0110011"; -- 4
+            when "0101" => segments <= "0110110"; -- 5
+            when "0110" => segments <= "0111110"; -- 6
+            when "0111" => segments <= "0000011"; -- 7
+            when "1000" => segments <= "0111111"; -- 8
+            when "1001" => segments <= "0110111"; -- 9
+            when "1010" => segments <= "0111011"; -- A
+            when "1011" => segments <= "0111110"; -- b
+            when "1100" => segments <= "0011100"; -- C
+            when "1101" => segments <= "0101111"; -- d
+            when "1110" => segments <= "0111100"; -- E
+            when "1111" => segments <= "0111000"; -- F
+            when others => segments <= "0000000"; -- Off for undefined inputs
+        end case;
+    end process;
+end rtl;

@@ -1,0 +1,32 @@
+architecture one of testbench is
+  signal a, b, c, d, f: std_logic;
+
+  component circuit1
+    port( 
+      A :  IN  STD_LOGIC;
+      B :  IN  STD_LOGIC;
+      C :  IN  STD_LOGIC;
+      D :  IN  STD_LOGIC;
+      F :  OUT  STD_LOGIC
+    );
+  end component;
+
+begin
+  process
+  begin
+    wait for 0 ns;  -- Initial wait
+
+    loop
+      -- Set values for A, B, C, and D
+      A <= '0', '1' after 75 ns, '0' after 100 ns, '1' after 150 ns, '0' after 175 ns;
+      B <= '0', '1' after 25 ns, '0' after 50 ns, '1' after 125 ns;
+      C <= '0', '1' after 75 ns, '0' after 100 ns, '1' after 150 ns, '0' after 175 ns;
+      D <= '0', '1' after 25 ns, '0' after 50 ns, '1' after 125 ns;
+
+      wait for 25 ns;  -- Wait for 25 ns before changing values again
+    end loop;
+  end process;
+
+  T0: circuit1 port map(a, b, c, d, f);
+
+end one;

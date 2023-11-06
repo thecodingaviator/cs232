@@ -1,0 +1,145 @@
+// Copyright (C) 1991-2012 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+
+// 
+// Device: Altera EP4CGX15BF14C6 Package FBGA169
+// 
+
+//
+// This file contains Fast Corner delays for the design using part EP4CGX15BF14C6,
+// with speed grade M, core voltage 1.2V, and temperature 0 Celsius
+//
+
+// 
+// This SDF file should be used for ModelSim-Altera (VHDL) only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "flash")
+  (DATE "09/25/2023 15:30:41")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus II 32-bit")
+  (VERSION "Version 12.1 Build 177 11/07/2012 SJ Full Version")
+  (DIVIDER .)
+  (TIMESCALE 1 ps)
+
+  (CELL
+    (CELLTYPE "cycloneiv_io_obuf")
+    (INSTANCE \\result\[3\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (608:608:608) (687:687:687))
+        (IOPATH i o (1723:1723:1723) (1675:1675:1675))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneiv_io_obuf")
+    (INSTANCE \\result\[2\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (516:516:516) (566:566:566))
+        (IOPATH i o (1555:1555:1555) (1528:1528:1528))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneiv_io_obuf")
+    (INSTANCE \\result\[1\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (509:509:509) (557:557:557))
+        (IOPATH i o (1545:1545:1545) (1518:1518:1518))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneiv_io_obuf")
+    (INSTANCE \\result\[0\]\~output\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (463:463:463) (418:418:418))
+        (IOPATH i o (1518:1518:1518) (1545:1545:1545))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneiv_io_ibuf")
+    (INSTANCE \\a\[2\]\~input\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (272:272:272) (647:647:647))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneiv_io_ibuf")
+    (INSTANCE \\a\[3\]\~input\\)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (252:252:252) (627:627:627))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneiv_lcell_comb")
+    (INSTANCE \\inst\|result\[1\]\~0\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (2159:2159:2159) (2410:2410:2410))
+        (PORT datad (1892:1892:1892) (2104:2104:2104))
+        (IOPATH datab combout (167:167:167) (167:167:167))
+        (IOPATH datad combout (68:68:68) (63:63:63))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneiv_lcell_comb")
+    (INSTANCE \\inst\|result\[1\]\~1\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (2159:2159:2159) (2409:2409:2409))
+        (PORT datad (1892:1892:1892) (2104:2104:2104))
+        (IOPATH datab combout (160:160:160) (156:156:156))
+        (IOPATH datad combout (68:68:68) (63:63:63))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneiv_lcell_comb")
+    (INSTANCE \\inst\|result\[1\]\~2\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (2158:2158:2158) (2409:2409:2409))
+        (PORT datad (1892:1892:1892) (2104:2104:2104))
+        (IOPATH datab combout (168:168:168) (167:167:167))
+        (IOPATH datad combout (68:68:68) (63:63:63))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneiv_lcell_comb")
+    (INSTANCE \\inst\|result\[0\]\~3\\)
+    (DELAY
+      (ABSOLUTE
+        (PORT datab (2155:2155:2155) (2405:2405:2405))
+        (PORT datad (1894:1894:1894) (2105:2105:2105))
+        (IOPATH datab combout (168:168:168) (167:167:167))
+        (IOPATH datad combout (68:68:68) (63:63:63))
+      )
+    )
+  )
+)

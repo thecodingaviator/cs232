@@ -1,0 +1,7 @@
+v 4
+file . "prime.vhd" "9cbd04b81465804529fb912556c1903c5091ab11" "20230925010725.962":
+  entity prime at 19( 930) + 0 on 49;
+  architecture bdf_type of prime at 35( 1142) + 0 on 50;
+file . "primetb.vhd" "35edac9ff6acac590220ca99ea81a61601da0d09" "20230925010725.960":
+  entity primetb at 1( 0) + 0 on 47;
+  architecture one of primetb at 7( 76) + 0 on 48;
