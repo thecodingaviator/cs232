@@ -47,13 +47,14 @@ BEGIN
   -- State machine logic
   PROCESS (clock)
   BEGIN
-    IF b1 = '0' and b2 = '0' THEN
+    IF b1 = '0' AND b2 = '0' THEN
       -- Reset logic
       stack_ptr <= (OTHERS => '0');
       mbr <= (OTHERS => '0');
       RAM_input <= (OTHERS => '0');
       RAM_we <= '0';
       state <= "000";
+
     ELSIF rising_edge(clock) THEN
       CASE state IS
         WHEN "000" =>
@@ -61,30 +62,37 @@ BEGIN
           IF b0 = '0' THEN
             -- Capture input data
             mbr <= data;
-            state <= "001";
+            state <= "111";
           ELSIF b1 = '0' THEN
             -- Enter data onto the stack
             RAM_input <= mbr;
             RAM_we <= '1';
-            state <= "010";
+            state <= "001";
           ELSIF b2 = '0' THEN
-            -- Prepare for action
-            state <= "011";
+            -- Extension: only decrement if stack is not empty
+            IF stack_ptr /= "0000" THEN
+              -- Pop the stack
+              stack_ptr <= stack_ptr - 1;
+              state <= "100";
+            END IF;
           END IF;
 
         WHEN "001" =>
-          -- Captured data, waiting for next step
-          state <= "000";
-
-        WHEN "010" =>
           -- Data entered onto stack, increment stack pointer
           RAM_we <= '0';
+          -- Extension: only increment if stack is not full
           IF stack_ptr /= "1111" THEN
             stack_ptr <= stack_ptr + 1;
           END IF;
-          state <= "000";
+          state <= "111";
 
-        WHEN "011" =>
+        WHEN "100" =>
+          state <= "101";
+
+        WHEN "101" =>
+          state <= "110";
+
+        WHEN "110" =>
           -- Action state, perform the operation
           -- Assume RAM_output is valid and contains the previous stack value
           CASE op IS
@@ -103,12 +111,23 @@ BEGIN
               mbr <= STD_LOGIC_VECTOR(unsigned(RAM_output) / unsigned(mbr));
             WHEN OTHERS => NULL;
           END CASE;
-          state <= "000";
+          state <= "111";
+
+        WHEN "111" =>
+          IF b0 = '1' AND b1 = '1' AND b2 = '1' THEN
+            state <= "000";
+          END IF;
+
         WHEN OTHERS =>
           state <= "000";
       END CASE;
     END IF;
   END PROCESS;
+
+  -- Output assignments
+  digit0 <= STD_LOGIC_VECTOR(hex0);
+  digit1 <= STD_LOGIC_VECTOR(hex1);
+  stackview <= STD_LOGIC_VECTOR(stack_ptr);
 
   -- Port mapping
   RAM0 : memram
@@ -131,10 +150,5 @@ BEGIN
     a => unsigned(mbr(7 DOWNTO 4)),
     segments => hex1
   );
-
-  -- Output assignments
-  digit0 <= STD_LOGIC_VECTOR(hex0);
-  digit1 <= STD_LOGIC_VECTOR(hex1);
-  stackview <= STD_LOGIC_VECTOR(stack_ptr);
 
 END rtl;
