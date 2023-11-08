@@ -264,15 +264,15 @@ file / "/export/opt/altera/12.1/quartus/eda/sim_lib/altera_lnsim_components.vhd"
 file / "/export/opt/altera/12.1/quartus/eda/sim_lib/altera_europa_support_lib.vhd" "a15f132603d9dfc13718ecec9b9fce648fbac3c8" "20231106163714.008":
   package altera_europa_support_lib at 30( 1694) + 0 on 541 body;
   package body altera_europa_support_lib at 132( 6185) + 0 on 542;
-file . "calculator_tb.vhd" "cd2f7f36ac18099d892e74b7bfd3ffa75c81a2d4" "20231107041708.200":
-  entity calculator_tb at 1( 0) + 0 on 1334;
-  architecture behavior of calculator_tb at 9( 151) + 0 on 1335;
-file . "calculator.vhd" "3f1ca722e1ed6a51db8b909222694b1db769363c" "20231107041708.204":
-  entity calculator at 1( 0) + 0 on 1336;
-  architecture rtl of calculator at 19( 639) + 0 on 1337;
-file . "memram.vhd" "2d73f37b447a898a215463caaf012e9c216de2a5" "20231107041708.206":
-  entity memram at 36( 1369) + 0 on 1338;
-  architecture syn of memram at 54( 1686) + 0 on 1339;
-file . "hexdisplay.vhd" "404c726dfb5a474a2d4bc62abb4393af274086f8" "20231107041708.208":
-  entity hexdisplay at 1( 0) + 0 on 1340;
-  architecture rtl of hexdisplay at 13( 214) + 0 on 1341;
+file . "calculator_tb.vhd" "c775f706f5251127a577e8e20e64b18ba509b316" "20231107211215.038":
+  entity calculator_tb at 1( 0) + 0 on 1366;
+  architecture behavior of calculator_tb at 9( 151) + 0 on 1367;
+file . "calculator.vhd" "3058c082989eade2810b81d1f3559fd161fd4dd2" "20231107211215.044":
+  entity calculator at 1( 0) + 0 on 1368;
+  architecture rtl of calculator at 19( 639) + 0 on 1369;
+file . "memram.vhd" "2d73f37b447a898a215463caaf012e9c216de2a5" "20231107211215.046":
+  entity memram at 36( 1369) + 0 on 1370;
+  architecture syn of memram at 54( 1686) + 0 on 1371;
+file . "hexdisplay.vhd" "404c726dfb5a474a2d4bc62abb4393af274086f8" "20231107211215.049":
+  entity hexdisplay at 1( 0) + 0 on 1372;
+  architecture rtl of hexdisplay at 13( 214) + 0 on 1373;

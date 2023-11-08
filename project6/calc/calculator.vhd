@@ -104,8 +104,7 @@ BEGIN
               mbr <= STD_LOGIC_VECTOR(unsigned(RAM_output) - unsigned(mbr));
             WHEN "10" =>
               -- MULTIPLY (only use lower 4 bits)
-              mbr(3 DOWNTO 0) <= STD_LOGIC_VECTOR(unsigned(RAM_output(3 DOWNTO 0)) * unsigned(mbr(3 DOWNTO 0)));
-              mbr(7 DOWNTO 4) <= (OTHERS => '0'); -- Zero out the upper 4 bits
+              mbr <= std_logic_vector(unsigned(RAM_output(3 downto 0)) * unsigned(mbr(3 downto 0)));-- Zero out the upper 4 bits
             WHEN "11" =>
               -- DIVIDE
               mbr <= STD_LOGIC_VECTOR(unsigned(RAM_output) / unsigned(mbr));

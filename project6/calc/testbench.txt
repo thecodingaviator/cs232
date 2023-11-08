@@ -3,6 +3,9 @@ b0,0,button,0
 b1,0,button,1
 b2,0,button,2
 
+op,0,switch,0
+op,1,switch,1
+
 # Mapping for hex display segments
 digit0,0,hex,0,0
 digit0,1,hex,0,1

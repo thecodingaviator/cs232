@@ -77,8 +77,74 @@ BEGIN
 
     WAIT FOR clock_period * 2;
 
+    -- -- Program 1
+    -- -- push 2 onto stack
+    -- data <= "00000010"; -- Data input 2
+    -- b0 <= '0'; -- Button press to capture data
+    -- WAIT FOR clock_period * 2;
+    -- b0 <= '1'; -- Release button
+    -- WAIT FOR clock_period * 2;
+    -- b1 <= '0'; -- Button press to enter data onto the stack
+    -- WAIT FOR clock_period * 2;
+    -- b1 <= '1'; -- Release button
+
+    -- WAIT FOR clock_period * 2;
+
+    -- -- push 6 onto stack
+    -- b0 <= '0';
+    -- data <= "00000110"; -- Data input 6
+    -- WAIT FOR clock_period * 2;
+    -- b0 <= '1';
+    -- WAIT FOR clock_period * 2;
+    -- b1 <= '0';
+    -- WAIT FOR clock_period * 2;
+    -- b1 <= '1';
+
+    -- WAIT FOR clock_period * 2;
+
+    -- -- push 4 onto stack
+    -- b0 <= '0';
+    -- data <= "00000100"; -- Data input 4
+    -- WAIT FOR clock_period * 2;
+    -- b0 <= '1';
+    -- WAIT FOR clock_period * 2;
+    -- b1 <= '0';
+    -- WAIT FOR clock_period * 2;
+    -- b1 <= '1';
+    -- WAIT FOR clock_period * 2;
+
+    -- -- push 0 onto MBR
+    -- b0 <= '0';
+    -- data <= "00000000"; -- Data input 0
+    -- WAIT FOR clock_period * 2;
+    -- b0 <= '1';
+
+    -- WAIT FOR clock_period * 2;
+
+    -- -- perform subtraction (4-0)
+    -- op <= "01"; -- Opcode for subtraction
+    -- b2 <= '0';
+    -- WAIT FOR clock_period * 2;
+    -- b2 <= '1'; -- Release button
+    -- WAIT FOR clock_period * 10;
+
+    -- -- perform subtraction (6-4)
+    -- b2 <= '0';
+    -- WAIT FOR clock_period * 2;
+    -- b2 <= '1';
+    -- WAIT FOR clock_period * 10;
+
+    -- -- perform addition (2+2)
+    -- op <= "00"; -- Opcode for addition
+    -- b2 <= '0';
+    -- WAIT FOR clock_period * 2;
+    -- b2 <= '1';
+    -- WAIT FOR clock_period * 10;
+    -- -- End of program 1
+
+    -- Program 2
     -- push 2 onto stack
-    data <= "00000010"; -- Data input 2
+    data <= "00000010"; -- Data input 10
     b0 <= '0'; -- Button press to capture data
     WAIT FOR clock_period * 2;
     b0 <= '1'; -- Release button
@@ -89,57 +155,48 @@ BEGIN
 
     WAIT FOR clock_period * 2;
 
-    -- push 6 onto stack
+    -- push 6 onto MBR
     b0 <= '0';
-    data <= "00000110"; -- Data input 6
+    data <= "00000110"; -- Data input 5
     WAIT FOR clock_period * 2;
     b0 <= '1';
+
     WAIT FOR clock_period * 2;
+
+    -- perform multiplication (6*2)
+    op <= "10"; -- Opcode for multiplication
+    b2 <= '0';
+    WAIT FOR clock_period * 2;
+    b2 <= '1';
+    WAIT FOR clock_period * 10;
+
+    -- push current result onto stack
     b1 <= '0';
     WAIT FOR clock_period * 2;
     b1 <= '1';
 
     WAIT FOR clock_period * 2;
 
-    -- push 4 onto stack
+    -- push 3 onto MBR
     b0 <= '0';
-    data <= "00000100"; -- Data input 4
-    WAIT FOR clock_period * 2;
-    b0 <= '1';
-    WAIT FOR clock_period * 2;
-    b1 <= '0';
-    WAIT FOR clock_period * 2;
-    b1 <= '1';
-    WAIT FOR clock_period * 2;
-
-    -- push 0 onto stack
-    b0 <= '0';
-    data <= "00000000"; -- Data input 0
+    data <= "00000011"; -- Data input 3
     WAIT FOR clock_period * 2;
     b0 <= '1';
 
     WAIT FOR clock_period * 2;
 
-    -- perform subtraction (4-0)
-    op <= "01"; -- Opcode for subtraction
-    b2 <= '0';
-    WAIT FOR clock_period * 2;
-    b2 <= '1'; -- Release button
-    WAIT FOR clock_period * 10;
-
-    -- perform subtraction (6-4)
+    -- perform division (6/3)
+    op <= "11"; -- Opcode for division
     b2 <= '0';
     WAIT FOR clock_period * 2;
     b2 <= '1';
     WAIT FOR clock_period * 10;
 
-    -- perform addition (2+2)
-    op <= "00"; -- Opcode for addition
-    b2 <= '0';
+    -- End of program 2
+
     WAIT FOR clock_period * 2;
-    b2 <= '1';
-    WAIT FOR clock_period * 10;
-    -- end simulation
+
+    -- End of simulation
 
     assert FALSE report "End of simulation" severity FAILURE;
   END PROCESS;
