@@ -6,7 +6,7 @@ entity cpubench is
 end cpubench;
 
 architecture test of cpubench is
-  constant num_cycles : integer := 200;
+  constant num_cycles : integer := 400;
 
   signal iport: std_logic_vector( 7 downto 0) := "00000000";
   signal oport: std_logic_vector(15 downto 0) := "0000000000000000";
