@@ -1,0 +1,19 @@
+-- program memory file for .\ins.a
+DEPTH = 256;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = BIN;
+CONTENT
+BEGIN
+00 : 1111100000000000; -- movei 0 ra 
+01 : 1111100000001001; -- movei 1 rb 
+02 : 1111100001010011; -- movei 10 rd 
+03 : 1111100000001100; -- movei 1 re 
+04 : 1000000001000010; -- add ra rb rc 
+05 : 1111000100000000; -- move rb ra 
+06 : 1111001000000001; -- move rc rb 
+07 : 1001011100000011; -- sub rd re rd 
+08 : 0011000000001010; -- braz 0A 
+09 : 0010000000000100; -- bra 04 
+[0A..FF] : 1111111111111111;
+END

@@ -1,0 +1,13 @@
+start:
+MOVEI 0 RA
+MOVEI 1 RB
+MOVEI 10 RD
+MOVEI 1 RE
+loop:
+ADD RA RB RC
+MOVE RB RA
+MOVE RC RB
+SUB RD RE RD
+BRAZ stop
+BRA loop
+stop:
